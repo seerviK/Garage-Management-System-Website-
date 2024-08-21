@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style1.css">
+    <script>
+        function validateForm() {
+            var username = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            
+            if (username.trim() == '') {
+                alert("Please enter your name.");
+                return false;
+            }
+            
+            if (password.trim() == '') {
+                alert("Please enter your password.");
+                return false;
+            }
+            
+            return true;
+        }
+
+        function toggleForm() {
+            var formContainer = document.querySelector('.form-container');
+            formContainer.classList.toggle('show');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <br>
+        <br>
+        <p><b>SeerviK</b></p>
+        <p><b>Password Manager</b></p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p2><b>Treat your password like your toothbrush. Don't let anybody else use it, and get a new one every six months.</b></p2>
+        <button class="login-btn" onclick="toggleForm()">Login</button>
+    </header>
+    <div class="form-container">
+        <h2>Login</h2>
+
+        <form action="/home" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="username" placeholder="Enter your name" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <p>Not having an account? <a href="/signup">Signup</a></p>
+    </div>
+    <footer>
+        Safer with SeerviK
+    </footer>
+</body>
+</html>

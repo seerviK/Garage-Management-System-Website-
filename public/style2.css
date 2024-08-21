@@ -1,0 +1,100 @@
+/* style.css */
+
+/* Body styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+     background: linear-gradient(to bottom, #f7f7f7, #dde6eb);
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    height: 70px;
+}
+
+/* Main container styles */
+.main-container {
+    display: flex;
+}
+
+/* Login and signup form container styles */
+.form-container {
+    width: 300px;
+    padding: 20px;
+    margin-left: 550px;
+}
+
+/* Login and signup form styles */
+form {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #555;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 25px;
+}
+.form-container input{
+    margin-right: 30px;
+    font-size: 20px;
+}
+
+.form-container label{
+    font-size: 20px;
+}
+
+.form-container h2{
+    font-size: 28px;
+}
+
+.form-container button{
+    font-size: 20px;
+    background-color: black;
+}
+
+.form-container p{
+    font-size: 20px;
+}

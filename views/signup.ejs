@@ -1,0 +1,72 @@
+<!-- signup.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="/style2.css">
+    <script>
+        function validateForm() {
+            var username = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            if (username.trim() === '') {
+                alert("Please enter your name.");
+                return false;
+            }
+
+            if (password.trim() === '') {
+                alert("Please enter your password.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            if (username === password) {
+                alert("Username and password cannot be the same.");
+                return false;
+            }
+
+            if (password.length > 20) {
+                alert("Password must be 10 characters or less.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+     <header>
+        <p>Bon Voyage Travel Agency</p>
+    </header>
+    <div class="form-container">
+        <h2>Sign-up</h2>
+        <form action="/signup" method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="username" placeholder="Enter your name" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="submit-btn">Sign-up</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; Bon Voyage Tours</p>
+    </footer>
+</body>
+</html>

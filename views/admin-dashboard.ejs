@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/admin-dashboard-style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome Admin!</h1>
+    </header>
+    <section>
+        <h2>Users Database</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                    <th>Actions</th> <!-- Add a column for actions -->
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.password %></td>
+                        <td><%= user.role %></td>
+                        <td>
+                            <% if (user.role !== 'admin') { %> <!-- Exclude admin from role change -->
+                                <form action="/updateRole/<%= user._id %>" method="post"> <!-- Update action attribute -->
+                                    <select name="role">
+                                        <option value="admin" <%= user.role === 'admin' ? 'selected' : '' %>>Admin</option>
+                                        <option value="manager" <%= user.role === 'manager' ? 'selected' : '' %>>Manager</option>
+                                        <option value="user" <%= user.role === 'user' ? 'selected' : '' %>>User</option>
+                                    </select>
+                                    <button type="submit">Update Role</button>
+                                </form>
+                                <form action="/viewDetails/<%= user._id %>" method="get"> <!-- Form to view user details -->
+                                    <button type="submit">See Details</button>
+                                </form>
+                            <% } %>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </section>
+    <footer>
+        <p>&copy; 2022 Admin Dashboard</p>
+    </footer>
+</body>
+</html>
