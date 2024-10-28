@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <link rel="stylesheet" href="/teams.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Teams Available</h1>
+    </header>
+
+    <main>
+        <section class="teams">
+            <div class="teams-container">
+                <!-- Team A Card -->
+                <div class="team-card">
+                    <h2>Gearshift Gurus</h2>
+                    <button onclick="toggleTeam('TeamA')">View Team</button>
+                    <button onclick="bookTeam('Gearshift Gurus')">Book Team</button>
+                </div>
+
+                <!-- Team B Card -->
+                <div class="team-card">
+                    <h2>Torque Titans</h2>
+                    <button onclick="toggleTeam('TeamB')">View Team</button>
+                    <button onclick="bookTeam('Torque Titans')">Book Team</button>
+                </div>
+
+                <!-- Team C Card -->
+                <div class="team-card">
+                    <h2>Speedsters Squad</h2>
+                    <button onclick="toggleTeam('TeamC')">View Team</button>
+                    <button onclick="bookTeam('Speedsters Squad')">Book Team</button>
+                </div>
+
+                <!-- Team D Card -->
+                <div class="team-card">
+                    <h2>Engine Experts</h2>
+                    <button onclick="toggleTeam('TeamD')">View Team</button>
+                    <button onclick="bookTeam('Engine Experts')">Book Team</button>
+                </div>
+
+                <!-- Team E Card -->
+                <div class="team-card">
+                    <h2>Motor Maestros</h2>
+                    <button onclick="toggleTeam('TeamE')">View Team</button>
+                    <button onclick="bookTeam('Motor Maestros')">Book Team</button>
+                </div>
+            </div>
+
+            <!-- Team Members Tables -->
+            <div id="TeamA" class="members-table" style="display: none;">
+                <h3>Gearshift Gurus Members</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Experience (Years)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Jigar Prajapati</td><td>10</td></tr>
+                        <tr><td>2</td><td>Rohit Shimpi</td><td>12</td></tr>
+                        <tr><td>3</td><td>Shreyash Hassekar</td><td>9</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="TeamB" class="members-table" style="display: none;">
+                <h3>Torque Titans Members</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Experience (Years)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Akshay Rupanvar</td><td>8</td></tr>
+                        <tr><td>2</td><td>Mustafa Ajnwala</td><td>8</td></tr>
+                        <tr><td>3</td><td>Mohit Patel</td><td>8</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="TeamC" class="members-table" style="display: none;">
+                <h3>Speedsters Squad Members</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Experience (Years)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Atharva Zanjurne</td><td>5</td></tr>
+                        <tr><td>2</td><td>Parth Kale</td><td>2</td></tr>
+                        <tr><td>3</td><td>Anuj Kumar Sutar</td><td>4</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="TeamD" class="members-table" style="display: none;">
+                <h3>Engine Experts Members</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Experience (Years)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Sharvari Korde</td><td>10</td></tr>
+                        <tr><td>2</td><td>Neel Khatri</td><td>11</td></tr>
+                        <tr><td>3</td><td>Siddhi Wani</td><td>5</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="TeamE" class="members-table" style="display: none;">
+                <h3>Motor Maestros Members</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Experience (Years)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Nimay Khandelwal</td><td>5</td></tr>
+                        <tr><td>2</td><td>Shreya Borade</td><td>6</td></tr>
+                        <tr><td>3</td><td>Anagha Patil</td><td>4</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Booking Form Modal -->
+        <div id="TeamABooking" class="booking-form" style="display: none;">
+            <form id="booking-form-TeamA" class="booking-form" method="POST" action="/book-team">
+                <h2>Book Team: Gearshift Gurus</h2>
+                
+                <label for="name">Enter Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="contact">Enter Contact:</label>
+                <input type="text" id="contact" name="contact" required>
+                
+                <label for="vehicleName">Enter Vehicle Name:</label>
+                <input type="text" id="vehicleName" name="vehicleName" required>
+                
+                <label for="vehicleNumber">Enter Vehicle Number:</label>
+                <input type="text" id="vehicleNumber" name="vehicleNumber" required>
+                
+                <label for="address">Enter Address:</label>
+                <input type="text" id="address" name="address" required>
+                
+                <button type="submit">Book</button>
+            </form>
+            <button id="close-modal">Close</button>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2024 GaragePro. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleTeam(teamId) {
+            const teamTable = document.getElementById(teamId);
+            if (teamTable.style.display === 'none' || teamTable.style.display === '') {
+                teamTable.style.display = 'block';
+            } else {
+                teamTable.style.display = 'none';
+            }
+        }
+
+        function bookTeam(teamName) {
+            // Show the booking form and set the team name in the title
+            $('#TeamABooking h2').text(`Book Team: ${teamName}`);
+            $('#TeamABooking').show(); // Show the booking form for Team A
+        }
+
+        $('#close-modal').on('click', function() {
+            $('#TeamABooking').hide(); // Hide the booking form when close button is clicked
+        });
+
+        $('#booking-form-TeamA').on('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const formData = $(this).serialize(); // Serialize the form data
+            $.post('/book-team', formData, function(response) {
+                alert(`Booking Successful!\nTeam: ${response.teamName}\nUser: ${response.userName}\nContact: ${response.contact}\nAddress: ${response.address}`);
+                $('#TeamABooking').hide(); // Hide the booking form after successful booking
+            }).fail(function() {
+                alert('Booking failed. Please try again.'); // Alert on booking failure
+            });
+        });
+    </script>
+</body>
+
+</html>

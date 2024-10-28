@@ -4,51 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="/admin-dashboard-style.css">
+    <link rel="stylesheet" href="/adminstyle.css">
 </head>
 <body>
     <header>
-        <h1>Welcome Admin!</h1>
+        <h1>Welcome, Admin Kamlesh</h1>
+        <nav>
+        </nav>
     </header>
-    <section>
-        <h2>Users Database</h2>
-        <table>
+    <main>
+        <h2>Admin Dashboard</h2>
+        <p>This is where you can manage the application.</p>
+
+        <h3>Customer Bookings</h3>
+        <table border="1">
             <thead>
                 <tr>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Role</th>
-                    <th>Actions</th> <!-- Add a column for actions -->
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Vehicle Name</th>
+                    <th>Vehicle Number</th>
+                    <th>Action</th> <!-- New column for delete button -->
                 </tr>
             </thead>
             <tbody>
-                <% users.forEach(user => { %>
+                <% bookings.forEach(booking => { %>
                     <tr>
-                        <td><%= user.name %></td>
-                        <td><%= user.password %></td>
-                        <td><%= user.role %></td>
+                        <td><%= booking.name %></td>
+                        <td><%= booking.address %></td>
+                        <td><%= booking.contact %></td>
+                        <td><%= booking.vehicleName %></td>
+                        <td><%= booking.vehicleNumber %></td>
                         <td>
-                            <% if (user.role !== 'admin') { %> <!-- Exclude admin from role change -->
-                                <form action="/updateRole/<%= user._id %>" method="post"> <!-- Update action attribute -->
-                                    <select name="role">
-                                        <option value="admin" <%= user.role === 'admin' ? 'selected' : '' %>>Admin</option>
-                                        <option value="manager" <%= user.role === 'manager' ? 'selected' : '' %>>Manager</option>
-                                        <option value="user" <%= user.role === 'user' ? 'selected' : '' %>>User</option>
-                                    </select>
-                                    <button type="submit">Update Role</button>
-                                </form>
-                                <form action="/viewDetails/<%= user._id %>" method="get"> <!-- Form to view user details -->
-                                    <button type="submit">See Details</button>
-                                </form>
-                            <% } %>
+                            <!-- New delete button -->
+                            <form action="/delete-booking/<%= booking._id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this booking?');">
+                                <button type="submit">Delete</button>
+                            </form>
                         </td>
                     </tr>
                 <% }); %>
             </tbody>
         </table>
-    </section>
+
+<!-- New Contact Messages Table -->
+<h3>Contact Messages</h3>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+            <th>Action</th> <!-- Column for delete button -->
+        </tr>
+    </thead>
+    <tbody>
+        <% contacts.forEach(contact => { %>
+            <tr>
+                <td><%= contact.email %></td>
+                <td><%= contact.phone %></td>
+                <td><%= contact.message %></td>
+                <td>
+                    <!-- Delete button -->
+                    <form action="/delete-contact/<%= contact._id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this message?');">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+
+        <!-- New Teams Table -->
+        <h3>Teams</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Team ID</th>
+                    <th>Team Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Static entries for the Teams table -->
+                <tr>
+                    <td>1</td>
+                    <td>Gearshift Gurus</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Torque Titans</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Speedsters Squad</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Engine Experts</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Motor Maestros</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
     <footer>
-        <p>&copy; 2022 Admin Dashboard</p>
+        <p>© 2024 GaragePro. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

@@ -1,69 +1,104 @@
 /* style.css */
 
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Body styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-     background: linear-gradient(to bottom, #f7f7f7, #dde6eb);
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #f7f7f7, #dde6eb);
+    background-image: url(background.jpg);
+    background-size: cover;
 }
 
 /* Header styles */
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 10px; /* Reduced padding */
     text-align: center;
-    font-size: 30px;
-    height: 70px;
+    font-size: 20px; /* Slightly smaller font size */
+    height: 60px; /* Reduced height */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Main container styles */
 .main-container {
     display: flex;
+    justify-content: center; /* Center the form */
+    align-items: center; /* Center vertically */
+    min-height: calc(100vh - 120px); /* Adjust for header and footer heights */
 }
 
+.form-container h2{
+    color: white;
+}
 /* Login and signup form container styles */
 .form-container {
-    width: 300px;
-    padding: 20px;
-    margin-left: 550px;
+    width: 100%;
+    max-width: 400px; /* Increase max-width for larger screens */
+    padding: 30px;
+    margin: 20px; /* Add margin for responsiveness */
+    background-color: #fff; /* White background for the form */
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 /* Login and signup form styles */
 form {
-    border: 1px solid #ccc;
-    padding: 20px;
+    border: none; /* Remove border */
+    padding: 0; /* Reset padding */
 }
 
+/* Form group styles */
 .form-group {
     margin-bottom: 20px;
 }
 
+/* Label styles */
 label {
     display: block;
     margin-bottom: 5px;
+    font-size: 16px; /* Slightly smaller */
+    color: white;
 }
 
+/* Input styles */
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="email"] { /* Ensure email input matches others */
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px; /* Uniform font size */
+    transition: border-color 0.3s; /* Smooth transition */
 }
 
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus { /* Add focus styles for email input */
+    border-color: #333; /* Dark border on focus */
+}
+
+/* Submit button styles */
 .submit-btn {
-    padding: 10px 20px;
+    padding: 12px 20px;
     background-color: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px; /* Consistent font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
 }
 
 .submit-btn:hover {
-    background-color: #555;
+    background-color: #555; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Footer styles */
@@ -71,30 +106,37 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
+    padding: 10px; /* Reduced padding */
+    height: 60px; /* Reduced height */
     width: 100%;
-    font-size: 25px;
-}
-.form-container input{
-    margin-right: 30px;
-    font-size: 20px;
+    font-size: 20px; /* Smaller font size */
 }
 
-.form-container label{
-    font-size: 20px;
+/* Adjust form elements for consistency */
+.form-container input {
+    margin-right: 0; /* Remove right margin */
+    margin-bottom: 15px; /* Add margin below each input */
 }
 
-.form-container h2{
+.form-container h2 {
     font-size: 28px;
+    margin-bottom: 20px; /* Add margin below heading */
 }
 
-.form-container button{
-    font-size: 20px;
-    background-color: black;
+.form-container button {
+    font-size: 18px; /* Slightly smaller */
+    background-color: black; /* Ensure consistency */
 }
 
-.form-container p{
-    font-size: 20px;
+.form-container p {
+    font-size: 16px; /* Consistent font size */
+    margin-top: 10px; /* Space above paragraph */
+    color: #555; /* Softer color for text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
 }

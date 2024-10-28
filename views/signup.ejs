@@ -1,5 +1,3 @@
-<!-- signup.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +9,17 @@
     <script>
         function validateForm() {
             var username = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
             var password = document.getElementById("password").value;
             var confirmPassword = document.getElementById("confirm-password").value;
 
             if (username.trim() === '') {
                 alert("Please enter your name.");
+                return false;
+            }
+
+            if (email.trim() === '') {
+                alert("Please enter your email.");
                 return false;
             }
 
@@ -35,7 +39,7 @@
             }
 
             if (password.length > 20) {
-                alert("Password must be 10 characters or less.");
+                alert("Password must be 20 characters or less.");
                 return false;
             }
 
@@ -45,7 +49,8 @@
 </head>
 <body>
      <header>
-        <p>Bon Voyage Travel Agency</p>
+        <p>GaragePro</p>
+        <p>A Comprehensive Auto Service Management</p>
     </header>
     <div class="form-container">
         <h2>Sign-up</h2>
@@ -53,6 +58,10 @@
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="username" placeholder="Enter your name" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
@@ -66,7 +75,7 @@
         </form>
     </div>
     <footer>
-        <p>&copy; Bon Voyage Tours</p>
+        <p>&copy; GaragePro</p>
     </footer>
 </body>
 </html>

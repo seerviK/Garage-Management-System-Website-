@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories</title>
+    <link rel="stylesheet" href="/accessories.css">
+</head>
+
+<body>
+    <header>
+        <h1>Shop Accessories</h1>
+    </header>
+
+    <section class="accessories-grid">
+        <div class="category">
+            <h2>Interior Accessories</h2>
+            <div class="items-grid" id="interior-grid">
+                <div class="item-card">
+                    <img src="/images/image1.jpg" alt="Interior Accessory 1">
+                    <p>Seat Covers</p>
+                    <p>Price: ₹1,500</p>
+                    <button class="buy-now" data-item="Seat Covers">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image2.jpg" alt="Interior Accessory 2">
+                    <p>Steering Wheel Cover</p>
+                    <p>Price: ₹800</p>
+                    <button class="buy-now" data-item="Steering Wheel Cover">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image3.jpg" alt="Interior Accessory 3">
+                    <p>Dashboard Cover</p>
+                    <p>Price: ₹1,200</p>
+                    <button class="buy-now" data-item="Dashboard Cover">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image4.jpg" alt="Interior Accessory 4">
+                    <p>Floor Mats</p>
+                    <p>Price: ₹1,000</p>
+                    <button class="buy-now" data-item="Floor Mats">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image5.jpg" alt="Interior Accessory 5">
+                    <p>Sunshades</p>
+                    <p>Price: ₹600</p>
+                    <button class="buy-now" data-item="Sunshades">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image6.jpg" alt="Interior Accessory 6">
+                    <p>Air Fresheners</p>
+                    <p>Price: ₹200</p>
+                    <button class="buy-now" data-item="Air Fresheners">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Exterior Accessories</h2>
+            <div class="items-grid" id="exterior-grid">
+                <div class="item-card">
+                    <img src="/images/image7.jpg" alt="Exterior Accessory 1">
+                    <p>Car Covers</p>
+                    <p>Price: ₹2,000</p>
+                    <button class="buy-now" data-item="Car Covers">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image8.jpg" alt="Exterior Accessory 2">
+                    <p>Car Decals</p>
+                    <p>Price: ₹500</p>
+                    <button class="buy-now" data-item="Car Decals">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image9.jpg" alt="Exterior Accessory 3">
+                    <p>Roof Racks</p>
+                    <p>Price: ₹3,500</p>
+                    <button class="buy-now" data-item="Roof Racks">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image10.jpg" alt="Exterior Accessory 4">
+                    <p>Bike Racks</p>
+                    <p>Price: ₹2,500</p>
+                    <button class="buy-now" data-item="Bike Racks">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image11.jpg" alt="Exterior Accessory 5">
+                    <p>Running Boards</p>
+                    <p>Price: ₹3,000</p>
+                    <button class="buy-now" data-item="Running Boards">Buy Now</button>
+                </div>
+                <div class="item-card">
+                    <img src="/images/image12.jpg" alt="Exterior Accessory 6">
+                    <p>Fog Lights</p>
+                    <p>Price: ₹1,800</p>
+                    <button class="buy-now" data-item="Fog Lights">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Buy Now form -->
+    <div id="buyNowModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span> -->
+            <h2>Buy <span id="item-name"></span></h2>
+            <form id="buyNowForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required><br>
+                
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" required><br>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 GaragePro. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for modal and form interaction -->
+    <script>
+        document.querySelectorAll('.buy-now').forEach(button => {
+            button.addEventListener('click', function () {
+                const itemName = this.getAttribute('data-item');
+                document.getElementById('item-name').textContent = itemName;
+                document.getElementById('buyNowModal').style.display = 'flex';
+            });
+        });
+
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('buyNowModal').style.display = 'none';
+        });
+
+        document.getElementById('buyNowForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Form submitted!');
+            document.getElementById('buyNowModal').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>

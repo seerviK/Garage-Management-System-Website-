@@ -31,27 +31,17 @@
     </script>
 </head>
 <body>
-    <header>
-        <br>
-        <br>
-        <p><b>SeerviK</b></p>
-        <p><b>Password Manager</b></p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p2><b>Treat your password like your toothbrush. Don't let anybody else use it, and get a new one every six months.</b></p2>
-        <button class="login-btn" onclick="toggleForm()">Login</button>
+    <header class="header-box">
+        <div class="header-content">
+            <h1><b>GaragePro</b></h1>
+            <h2><b>Comprehensive Auto Service Management</b></h2>
+            <button class="login-btn" onclick="toggleForm()">Login</button>
+        </div>
     </header>
     <div class="form-container">
         <h2>Login</h2>
 
-        <form action="/home" method="post" onsubmit="return validateForm()">
+        <form action="/login" method="post" onsubmit="return validateForm()">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="username" placeholder="Enter your name" required autocomplete="off">
@@ -62,10 +52,10 @@
             </div>
             <button type="submit" class="submit-btn">Login</button>
         </form>
-        <p>Not having an account? <a href="/signup">Signup</a></p>
+        <p>Not having an account? <a href="/signup"><b>Signup<b></a></p>
     </div>
     <footer>
-        Safer with SeerviK
+    <b>We take care of your car in the garage, and the car will take care of you on the road.<b>
     </footer>
 </body>
 </html>

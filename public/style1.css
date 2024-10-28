@@ -11,24 +11,38 @@ body {
     background-size: cover;
 }
 
-header {
+.header-box {
     width: 100%;
     color: white;
-    padding: 10px 0;
-    text-align: center;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for the header */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    height: 120px;
 }
 
-header p {
+
+.header-content h1 {
     margin: 0;
-    font-size: 40px;
-    margin-top: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    padding: 10px 0;
 }
 
-header p2 {
+.header-content h2 {
     margin: 0;
-    font-size: 25px;
-    margin-top: 20px;
+    font-size: 30px;
+    font-weight: normal;
+    padding: 5px 0;
+}
+
+.header-content .quote {
+    font-size: 20px;
+    font-style: italic;
+    margin: 20px 0;
+    padding: 10px;
 }
 
 .form-container {
@@ -39,13 +53,19 @@ header p2 {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     position: absolute;
-    top: 70px;
+    top: 150px; /* Adjusted to give space from header */
     right: 20px;
 }
 
 .form-container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: white;
+    text-align: center;
+}
+
+.form-container  {
+    margin-bottom: 20px;
+    color: white;
     text-align: center;
 }
 
@@ -90,10 +110,10 @@ header p2 {
 
 .login-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     padding: 10px 20px;
-    background-color:#f3628e;
+    background-color:#45a049;
     color: white;
     border: none;
     border-radius: 5px;
@@ -112,6 +132,8 @@ header p2 {
 footer {
     width: 100%;
     color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background for the header */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     text-align: center;
     padding: 10px 0;
     position: absolute;
