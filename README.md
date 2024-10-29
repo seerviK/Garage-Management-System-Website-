@@ -31,7 +31,7 @@ The Garage Management System is designed to provide garage owners with a modern,
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/garage-management-system.git
+   git clone https://github.com/seervik/Garage-Management-System-Website-.git
    cd garage-management-system
 2. **Install Node modules
    ```bash
